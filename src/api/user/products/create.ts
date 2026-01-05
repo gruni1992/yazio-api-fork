@@ -3,7 +3,7 @@ import { ProductSchema } from "@/api/products";
 import { fetchYazio } from "@/utils/fetch";
 import { z } from "zod";
 
-export const CreateProductOptionsSchema = ProductSchema.pick({
+export const AddProductOptionsSchema = ProductSchema.pick({
   id: true,
   name: true,
   category: true,
@@ -13,8 +13,8 @@ export const CreateProductOptionsSchema = ProductSchema.pick({
   servings: true,
 });
 
-export type CreateUserProductOptions = z.infer<
-  typeof CreateProductOptionsSchema
+export type AddProductOptions = z.infer<
+  typeof AddProductOptionsSchema
 >;
 
 /**
@@ -25,7 +25,7 @@ export type CreateUserProductOptions = z.infer<
  */
 export const addProduct = async (
   token: Token,
-  product: CreateUserProductOptions
+  product: AddProductOptions
 ): Promise<void> =>
   fetchYazio<void>("/user/products", {
     method: "POST",

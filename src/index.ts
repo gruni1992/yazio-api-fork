@@ -84,7 +84,7 @@ class User {
     options: Parameters<typeof removeUserConsumedItem>[1]
   ) => removeUserConsumedItem(await this.auth.authenticate(), options);
 
-  public createProduct = async (
+  public addProduct = async (
     options: Parameters<typeof addProduct>[1]
   ) => addProduct(await this.auth.authenticate(), options);
 }
