@@ -19,6 +19,8 @@ export const NutrientsSchema = z.object({
   "nutrient.dietaryfiber": z.number(),
   "nutrient.fat": z.number(),
   "nutrient.protein": z.number(),
+  "nutrient.salt": z.number(),
+  "nutrient.saturated": z.number(),
   "nutrient.sugar": z.number(),
   "vitamin.a": z.number(),
   "vitamin.b1": z.number(),

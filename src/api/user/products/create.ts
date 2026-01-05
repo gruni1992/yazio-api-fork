@@ -1,5 +1,5 @@
 import type { Token } from "@/types/auth";
-import { ProductSchema } from "@/api/products";
+import { NutrientsSchema, ProductSchema } from "@/api/products";
 import { fetchYazio } from "@/utils/fetch";
 import { z } from "zod";
 
@@ -11,6 +11,17 @@ export const AddProductOptionsSchema = ProductSchema.pick({
   is_private: true,
   nutrients: true,
   servings: true,
+}).extend({
+  nutrients: NutrientsSchema.partial()
+    .required({
+      "energy.energy": true,
+      "nutrient.fat": true,
+      "nutrient.saturated": true,
+      "nutrient.carb": true,
+      "nutrient.sugar": true,
+      "nutrient.protein": true,
+      "nutrient.salt": true,
+    }),
 });
 
 export type AddProductOptions = z.infer<
