@@ -5,6 +5,7 @@ import { YazioAuth } from "@/auth";
 
 import {
   getProduct,
+  addProduct,
   getUser,
   getUserConsumedItems,
   getUserDietaryPreferences,
@@ -82,6 +83,10 @@ class User {
   public removeConsumedItem = async (
     options: Parameters<typeof removeUserConsumedItem>[1]
   ) => removeUserConsumedItem(await this.auth.authenticate(), options);
+
+  public createProduct = async (
+    options: Parameters<typeof addProduct>[1]
+  ) => addProduct(await this.auth.authenticate(), options);
 }
 
 export class Yazio {

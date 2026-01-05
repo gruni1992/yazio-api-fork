@@ -11,6 +11,7 @@ export {
 
 export { getUserWeight } from "@/api/user/bodyvalues/weight";
 export { getUserSuggestedProducts } from "@/api/user/products/suggested";
+export { addProduct } from "@/api/user/products/create";
 export { getUserDietaryPreferences } from "@/api/user/diet";
 export { getUserExercises } from "@/api/user/exercises";
 export { getUserGoals } from "@/api/user/goals";
